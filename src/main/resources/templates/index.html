@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<title>Inicio</title>
+</head>
+<body>
+
+	<div class="section no-pad-bot" id="index-banner">
+
+		<div class="container ">
+			 
+			 <br>
+			 <br>
+			 <br>
+			<div class="col s6 card grey lighten-3" id="insertarmain">
+				<br>
+				<h1 class="center">Menu principal</h1>
+				<br>
+				<h4 th:if = "${successcat}" class="green-text center">Categoria insertado con exito</h4>
+				<h5 th:if = "${successlib}" class="green-text center">Libro insertado con exito</h5>						
+				<br>
+				<br>
+				<br>
+				<div class="row center">
+					<a class="btn btn-success" th:href="@{/categoria}">
+						Insertar categoria
+					</a>
+				</div>
+				<div class="row center">
+					<a class="btn btn-success" th:href="@{/libro}">
+						Insertar libro
+					</a>
+				</div>
+				<div class="row center">
+					<a class="btn btn-success" th:href="@{/listado}">
+						Ver libros
+					</a>
+				</div>
+				<br>
+			</div>
+			<br>
+			<br>
+			  
+			          
+		</div>
+		
+	</div>
+
+</body>
+</html>

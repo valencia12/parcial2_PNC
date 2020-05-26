@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<title>Insertar categorias</title>
+</head>
+<body>
+
+	<div class="section no-pad-bot" id="index-banner">
+
+		<div class="container ">
+			 
+			   
+			<form th:action="@{/validacioncat}" th:object="${categoria}" method="post"
+				class="col s6 card grey lighten-3" id="insertarmain">
+				<h2 class="header center">Insertar categoria</h2>
+				<div>
+					<div >
+						<input id = "ccategoria" type = "text" th:field = "*{ccategoria}">
+						<span th:errors = "*{ccategoria}" class="red-text"></span>
+		                <label for="ccategoria">CATEGORIA</label>
+					</div>
+				</div><button class="btn btn-success" type="submit">Cargar categoria</button>
+				<br>
+			</form>
+
+			  
+			          
+		</div>
+
+		
+	</div>
+
+</body>
+</html>

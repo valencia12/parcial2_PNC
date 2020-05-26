@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<title>Lista libros</title>
+</head>
+<body>
+
+	<div class="section no-pad-bot" id="index-banner">
+		<div class="container ">
+			<h2 class="center">Lista de libros</h2>
+				<table class="col s6 card grey lighten-4">
+					<thead>
+						<tr>
+							<th>Titulo</th>
+							<th>Autor</th>
+							<th>ISBN</th>
+							<th>Categoria</th>
+							<th>Fecha de ingreso</th>
+						</tr>
+					</thead>
+						<th:block th:each="libro, row: ${libros}">
+							<tr>
+								<td th:text="${libro.titulo}"></td>
+								<td th:text="${libro.autor}"></td>
+								<td th:text="${libro.isbn}"></td>
+								<td th:text="${libro.categoria.ccategoria}"></td>
+								<td th:text="${#dates.format(libro.fecha, 'dd/MM/yyyy hh:mm aa')}"></td>
+							</tr>
+						</th:block>
+				</table>
+			<div class="row center">
+				<a class="btn waves-effect center" th:href="@{/index}">
+								Regresar<i class="material-icons left">arrow_back</i>
+					</a>
+					
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>
