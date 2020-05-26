@@ -13,35 +13,34 @@
 		<div class="container ">
 			 
 			   
-			<form th:action="@{/validacionlib}" th:object="${libro}" method="post"
-				class="col s6 card grey lighten-3" id="insertarmain">
+			<form th:action="@{/validacionlib}" th:object="${libro}" method="post" id="insertarmain">
 				<br>
 				<br>
 				<h2 class="header center">Insertar libro</h2>
 				
 				<div class="row center">
-					<div class="input-field col s6 offset-s3">
+					<div >
 						<input id = "titulo" type = "text" th:field = "*{titulo}">
 						<span th:errors = "*{titulo}" class="red-text"></span>
 		                <label for="titulo">Titulo</label>
 					</div>
 				</div>
 				<div class="row center">
-					<div class="input-field col s6 offset-s3">
+					<div >
 						<input id = "autor" type = "text" th:field = "*{autor}">
 						<span th:errors = "*{autor}" class="red-text"></span>
 		                <label for="autor">Autor</label>
 					</div>
 				</div>
 				<div class="row center">
-					<div class="input-field col s6 offset-s3">
+					<div >
 						<input id = "isbn" type = "text" th:field = "*{isbn}">
 						<span th:errors = "*{isbn}" class="red-text"></span>
 		                <label for="isbn">isbn</label>
 					</div>
 				</div>
 				<div class = "row">
-					<div class="input-field col s6 offset-s3">
+					<div >
 					    <select th:field="*{categoria.cat}">
 						    <option th:each="categoria, row: ${categorias}" th:value="${categoria.cat}" th:text="${categoria.ccategoria}"></option>
 						</select>
@@ -49,7 +48,7 @@
 					  </div>
 				</div>
 				<div class="row center">
-					<div class="input-field col s6 offset-s3">
+					<div >
 						<p th:field = "*{estado}">
 					      <label>
 					        <input type="checkbox" name = "estado" class="filled-in" th:checked="${estadoinicial}" />
@@ -61,11 +60,8 @@
 				<br>
 				<br>
 				<br>
-				<div class="row center">
-					<button class="btn waves-effect col s4 offset-s4 btn-large" 
-								type="submit">
-								Guardar libro<i class="material-icons right">library_add</i>
-					</button>
+				<div >
+					<button type="submit">Guardar libro</button>
 					<br>
 					<br>
 					<br>
